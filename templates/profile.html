@@ -1,0 +1,62 @@
+{% if msg is defined %}
+<div class="bg-blue-700 p-3 text-white capitalize flex items-center justify-between" data-aos="fade-down"
+    data-aos-duration="800">
+    {{msg}}
+    <div class="text-3xl cursor-pointer close-toast">
+        <ion-icon name="close-outline"></ion-icon>
+    </div>
+</div>
+{% endif %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero flex flex-col justify-center items-center w-full p-3 h-screen">
+    <div
+        class="hover:ring-2 hover:ring-blue-500 hover:ring-offset-2 hover:scale-105 cursor-pointer  bg-blue-700 text-white text-3xl font-black capitalize h-16 w-16 flex items-center justify-center rounded-lg hover:shadow-lg">
+        <p>{{session['user'][0]}}</p>
+    </div>
+    <div class="details flex flex-col items-center">
+        <table class="m-3 bg-white">
+            <tbody>
+                <tr>
+                    <td class="p-2 border">Name</td>
+                    <td class="p-2 border">{{profile[1]}}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 border">Contact Number</td>
+                    <td class="p-2 border">{{profile[2]}}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 border">Email</td>
+                    <td class="p-2 border">{{profile[3]}}</td>
+                </tr>
+                <tr>
+                    <td class="p-2 border">Password</td>
+                    <td class="p-2 border">{{profile[4]}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/logout">
+            <button type="button"
+                class="max-w-fit hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 md:py-3 lg:py-3 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Logout</button>
+        </a>
+        {% if visits is defined %}
+        <div class="max-h-96 overflow-auto">
+            <p class="mt-6 capitalize">recent profile visits</p>
+            <table class="m-3">
+                {% for visit in visits %}
+                <tr>
+                    <td class="p-3 bg-white border">{{visit[1]}}</td>
+                    <td class="p-3 bg-white border">{{visit[2]}}</td>
+                    <td class="p-3 bg-white border">{{visit[3]}}</td>
+                    <td class="p-3 bg-white border"><a href="/profiles?type={{visit[2]}}&id={{3}}">
+                            <button type="button"
+                                class="max-w-fit hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 md:py-3 lg:py-3 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Visit</button>
+                        </a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

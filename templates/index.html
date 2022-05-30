@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero flex border-b justify-center items-center grid grid-cols-12 h-80 p-5">
+    <div
+        class="col-span-12 lg:col-span-6 md:col-span-6 lg:text-right text-center lg:text-5xl md:text-4xl text-2xl font-semibold">
+        <p>Our Motto Is To Empower India By Empowering Peoples</p>
+    </div>
+    <div class="col-span-12 lg:col-span-6 md:col-span-6 flex flex-col items-center text-center font-semibold">
+        <a href="/worker" data-aos="zoom-in" class="w-full">
+            <button type="button"
+                class="max-w-fit hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 md:py-3 lg:py-3 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Worker's
+                Registration</button>
+        </a>
+        <a href="/material" data-aos="zoom-in" data-aos-duration="1000" class="w-full">
+            <button type="button"
+                class="my-3 max-w-fit hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 md:py-3 lg:py-3 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Material
+                Provider Registration</button>
+        </a>
+        <a href="/event" data-aos="zoom-in" data-aos-duration="800" class="w-full">
+            <button type="button"
+                class="max-w-fit hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 md:py-3 lg:py-3 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Event
+                Organizer Registration</button>
+        </a>
+    </div>
+</div>
+<!-- <p class="text-center p-5 text-3xl font-black">This website is in development process</p> -->
+<div class="details grid grid-cols-12 gap-2 mt-8 p-5">
+    <div
+        class="col-span-12 lg:col-span-4 md:col-span-4 flex flex-col text-white cursor-pointer hover:bg-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-900 hover:text-blue-900 items-center rounded-lg justify-center bg-blue-800">
+        <ion-icon name="bicycle" class="text-9xl"></ion-icon>
+        <p class="text-lg font-semibold">we're open 24/7</p>
+        <p class="pb-5 px-3 text-center italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            perferendis. Laborum sequi, ut recusandae porro unde eum adipisci dolorum similique.</p>
+    </div>
+    <div
+        class="col-span-12 lg:col-span-4 md:col-span-4 flex flex-col text-white cursor-pointer hover:bg-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-900 hover:text-blue-900 items-center rounded-lg justify-center bg-blue-800">
+        <ion-icon name="earth" class="text-9xl"></ion-icon>
+        <p class="text-lg font-semibold">we're everywhere</p>
+        <p class="pb-5 px-3 text-center italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            perferendis. Laborum sequi, ut recusandae porro unde eum adipisci dolorum similique.</p>
+    </div>
+    <div
+        class="col-span-12 lg:col-span-4 md:col-span-4 flex flex-col text-white cursor-pointer hover:bg-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-900 hover:text-blue-900 items-center rounded-lg justify-center bg-blue-800">
+        <ion-icon name="construct" class="text-9xl"></ion-icon>
+        <p class="text-lg font-semibold">absolutely free</p>
+        <p class="pb-5 px-3 text-center italic">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta,
+            perferendis. Laborum sequi, ut recusandae porro unde eum adipisci dolorum similique.</p>
+    </div>
+</div>
+<div class="signup p-5 mt-3 text-center flex flex-col items-center border-y">
+    <p class="w-3/4 text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quia eaque esse obcaecati
+        et quod, qui aperiam facere ipsa earum. Perspiciatis eos beatae odit in laboriosam cupiditate iusto iste
+        doloremque.</p>
+    <a href="/search">
+        <button
+            class="hover:ring-2 hover:ring-offset-2 hover:ring-blue-800 flex items-center bg-blue-800 text-white max-w-lg justify-center p-3 rounded-lg mt-3">Contact
+            Now <ion-icon name="chevron-forward" class="text-xl"></ion-icon></button>
+    </a>
+</div>
+<!-- latest feeds -->
+<div class="feeds grid grid-cols-12 gap-2 p-5">
+    <div class="col-span-12 text-xl mb-8">
+        <p>Recent Material Workers</p>
+    </div>
+    <div class="col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+        <p class="text-gray-700 text-sm">type : <span>Material</span></p>
+        <p class="italic text-xs text-gray-800">iuhui</p>
+        <p class="text-lg font-semibold">iuhi</p>
+        <p class="text-gray-600">huiuhuihuih</p>
+        <a href="/web1/profile.php?type=material&id=1">
+            <button
+                class="hover:ring-2 hover:ring-offset-2 hover:ring-blue-800 flex items-center bg-blue-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                Now <ion-icon name="chevron-forward" class="text-xl"></ion-icon></button>
+        </a>
+    </div>
+    <div class="col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+        <p class="text-gray-700 text-sm">type : <span>Material</span></p>
+        <p class="italic text-xs text-gray-800">ceramics</p>
+        <p class="text-lg font-semibold">uih</p>
+        <p class="text-gray-600">ui8989 89 u8 8u89u</p>
+        <a href="/web1/profile.php?type=material&id=2">
+            <button
+                class="hover:ring-2 hover:ring-offset-2 hover:ring-blue-800 flex items-center bg-blue-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                Now <ion-icon name="chevron-forward" class="text-xl"></ion-icon></button>
+        </a>
+    </div>
+    <div class="col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+        <p class="text-gray-700 text-sm">type : <span>Material</span></p>
+        <p class="italic text-xs text-gray-800">plastic</p>
+        <p class="text-lg font-semibold">rubber shop</p>
+        <p class="text-gray-600">cool rubber here 12/23/23 street 2</p>
+        <a href="/web1/profile.php?type=material&id=3">
+            <button
+                class="hover:ring-2 hover:ring-offset-2 hover:ring-blue-800 flex items-center bg-blue-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                Now <ion-icon name="chevron-forward" class="text-xl"></ion-icon></button>
+        </a>
+    </div>
+</div>
+{% endblock %}

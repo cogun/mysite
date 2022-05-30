@@ -1,0 +1,15 @@
+* {
+    transition: 0.3s all ease;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(15, 15, 247);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 255, 0.54);
+}

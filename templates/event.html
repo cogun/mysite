@@ -1,0 +1,45 @@
+{% if msg is defined %}
+<div class="bg-blue-700 p-3 text-white capitalize flex items-center justify-between" data-aos="fade-down"
+    data-aos-duration="800">
+    {{msg}}
+    <div class="text-3xl cursor-pointer close-toast">
+        <ion-icon name="close-outline"></ion-icon>
+    </div>
+</div>
+{% endif %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero flex justify-center items-center w-full p-3 h-screen">
+    <form action="#" method="POST" class="bg-white p-3 rounded-lg shadow-lg flex flex-col lg:w-80 md:w-80 w-full">
+        <label for="title" class="text-lg font-semibold text-center p-3">
+            <p>event organiser Registration</p>
+        </label>
+        <label for="logo" class="text-center p-3">
+            <ion-icon name="cube" class="text-5xl text-blue-900 md hydrated" role="img" aria-label="cube"></ion-icon>
+        </label>
+        <label for="fname">
+            <input voice-data="अपना पहला नाम दर्ज करें" type="text" class="w-full rounded-lg border-gray-400"
+                name="fname" placeholder="enter first name" required="">
+        </label>
+        <label for="lname" class="mt-3">
+            <input voice-data="अपना अंतिम नाम दर्ज करें" type="text" class="w-full rounded-lg border-gray-400"
+                name="lname" placeholder="enter last number" required="">
+        </label>
+        <label for="venue" class="mt-3">
+            <input voice-data="अपना स्थान दर्ज करें" type="text" class="w-full rounded-lg border-gray-400" name="venue"
+                placeholder="enter venue" required="">
+        </label>
+        <label for="events" class="mt-3">
+            <select name="event" voice-data="अपना कौशल चुनें" class="w-full rounded-lg border-gray-400" required="">
+                <option value="">select Events</option>
+                <option value="brithday party">Birthday Party</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="engagement function">Engagement Function</option>
+                <option value="Reception Party">Reception Party</option>
+            </select>
+        </label>
+        <button type="submit" name="submit"
+            class="my-3 hover:ring-2 hover:ring-offset-2 hover:ring-blue-700 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 lg:py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
+    </form>
+</div>
+{% endblock %}

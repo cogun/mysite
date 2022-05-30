@@ -1,0 +1,99 @@
+{% if msg is defined %}
+<div class="bg-blue-700 p-3 text-white capitalize flex items-center justify-between" data-aos="fade-down"
+    data-aos-duration="800">
+    {{msg}}
+    <div class="text-3xl cursor-pointer close-toast">
+        <ion-icon name="close-outline"></ion-icon>
+    </div>
+</div>
+{% endif %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero flex flex-col justify-center items-center w-full p-3">
+    <form action="#" method="post" class="my-16 w-full flex flex-col justify-center items-center">
+        <div data-aos="zoom-in" data-aos-duration="500"
+            class="lg:w-1/2 xl:w-1/2 md:w-1/2 sm:w-full bg-white flex items-center hover:shadow-lg shadow-md rounded-lg">
+            <ion-icon name="search-outline" class="pl-2 text-2xl"></ion-icon>
+            <input type="text" class="p-3 grow border-none bg-transparent" name="search" placeholder="search here.."
+                >
+            <button data-aos="zoom-in" data-aos-delay="300"
+                class="bg-blue-700 p-2 rounded-lg text-white shadow-lg flex items-center hover:ring-2 hover:ring-blue-700 hover:ring-offset-2">Search
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+        </div>
+        <div
+            class="divide-x text-gray-700 text-sm sm:text-md flex-col sm:flex-row options m-4 capitalize flex justify-between rounded-lg shadow-md bg-white sm:w-2/5 w-3/5">
+            <label for="worker" class="flex items-center p-3">
+                <p>worker</p>
+                <input type="checkbox" class="ml-1 border-blue-700" name="worker" id="">
+            </label>
+            <label for="worker" class="flex items-center p-3">
+                <p>event organiser</p>
+                <input type="checkbox" class="ml-1 border-blue-700" name="event" id="">
+            </label>
+            <label for="worker" class="flex items-center p-3">
+                <p>material provider</p>
+                <input type="checkbox" class="ml-1 border-blue-700" name="material" id="">
+            </label>
+        </div>
+    </form>
+    {% if data is defined %}
+    <div class="grid grid-cols-12 gap-2 w-full">
+        {% if 'worker' in data %}
+        {% for worker in data['worker'] %}
+        <div class="bg-white col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+            <p class="text-lg font-semibold">{{worker[1]}} {{worker[2]}} <span class="text-xs">{{worker[3]}}</span></p>
+            <p class="text-gray-700 text-sm">type : <span>Worker</span></p>
+            <p class="text-gray-800">{{worker[5]}}</p>
+            <p class="text-gray-600">{{worker[6]}}</p>
+            <a href="/profiles?type=worker&id={{worker[0]}}">
+                <button
+                    class="hover:ring-2 hover:ring-offset-2 hover:ring-blue-800 flex items-center bg-blue-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                    Now <ion-icon name="chevron-forward" class="text-xl md hydrated" role="img"
+                        aria-label="chevron forward">
+                    </ion-icon></button>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if 'material' in data %}
+        {% for material in data['material'] %}
+        <div class="bg-white col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+            <p class="text-lg font-semibold">{{material[1]}}</p>
+            <p class="text-gray-700 text-sm">type : <span>Material Provider</span></p>
+            <p class="text-gray-800 italic">{{material[2]}}</p>
+            <p class="text-gray-600">{{material[4]}}</p>
+            <a href="/profiles?type=material&id={{material[0]}}">
+                <button
+                    class="hover:ring-2 hover:ring-offset-2 hover:ring-rose-800 flex items-center bg-rose-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                    Now <ion-icon name="chevron-forward" class="text-xl md hydrated" role="img"
+                        aria-label="chevron forward">
+                    </ion-icon></button>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if 'event' in data %}
+        {% for event in data['event'] %}
+        <div class="bg-white col-span-12 lg:col-span-3 md:col-span-3 text-gray-900 p-3 rounded-lg shadow-lg border">
+            <p class="text-lg font-semibold">{{event[1]}} {{event[2]}}</span></p>
+            <p class="text-gray-700 text-sm">type : <span>Event organiser</span></p>
+            <p class="text-gray-600 italic">{{event[3]}}</p>
+            <p class="text-gray-600">{{event[4]}}</p>
+            <a href="/profiles?type=event&id={{event[0]}}">
+                <button
+                    class="hover:ring-2 hover:ring-offset-2 hover:ring-green-800 flex items-center bg-green-800 text-white w-full justify-center p-3 rounded-lg mt-3">Contact
+                    Now <ion-icon name="chevron-forward" class="text-xl md hydrated" role="img"
+                        aria-label="chevron forward">
+                    </ion-icon></button>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
